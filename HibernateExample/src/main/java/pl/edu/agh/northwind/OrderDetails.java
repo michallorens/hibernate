@@ -1,6 +1,6 @@
 package pl.edu.agh.northwind;
 
-// Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1
+// Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1
 
 import java.math.BigDecimal;
 
@@ -10,8 +10,6 @@ import java.math.BigDecimal;
 public class OrderDetails implements java.io.Serializable {
 
 	private OrderDetailsId id;
-	private Products products;
-	private Orders orders;
 	private BigDecimal unitprice;
 	private BigDecimal quantity;
 	private BigDecimal discount;
@@ -19,11 +17,9 @@ public class OrderDetails implements java.io.Serializable {
 	public OrderDetails() {
 	}
 
-	public OrderDetails(OrderDetailsId id, Products products, Orders orders,
-			BigDecimal unitprice, BigDecimal quantity, BigDecimal discount) {
+	public OrderDetails(OrderDetailsId id, BigDecimal unitprice,
+			BigDecimal quantity, BigDecimal discount) {
 		this.id = id;
-		this.products = products;
-		this.orders = orders;
 		this.unitprice = unitprice;
 		this.quantity = quantity;
 		this.discount = discount;
@@ -35,22 +31,6 @@ public class OrderDetails implements java.io.Serializable {
 
 	public void setId(OrderDetailsId id) {
 		this.id = id;
-	}
-
-	public Products getProducts() {
-		return this.products;
-	}
-
-	public void setProducts(Products products) {
-		this.products = products;
-	}
-
-	public Orders getOrders() {
-		return this.orders;
-	}
-
-	public void setOrders(Orders orders) {
-		this.orders = orders;
 	}
 
 	public BigDecimal getUnitprice() {

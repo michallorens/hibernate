@@ -1,23 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="pl.edu.agh.northwind.OrderDetails" table="ORDER_DETAILS">
         <composite-id name="id" class="pl.edu.agh.northwind.OrderDetailsId">
-            <key-property name="orderid" type="big_decimal">
+            <key-many-to-one name="orders" class="pl.edu.agh.northwind.Orders">
                 <column name="ORDERID" precision="22" scale="0" />
-            </key-property>
-            <key-property name="productid" type="big_decimal">
+            </key-many-to-one>
+            <key-many-to-one name="products" class="pl.edu.agh.northwind.Products">
                 <column name="PRODUCTID" precision="22" scale="0" />
-            </key-property>
+            </key-many-to-one>
         </composite-id>
-        <many-to-one name="products" class="pl.edu.agh.northwind.Products" cascade="save-update" update="false" insert="false" fetch="select">
-            <column name="PRODUCTID" precision="22" scale="0" not-null="true" />
-        </many-to-one>
-        <many-to-one name="orders" class="pl.edu.agh.northwind.Orders" cascade="save-update" update="false" insert="false" fetch="select">
-            <column name="ORDERID" precision="22" scale="0" not-null="true" />
-        </many-to-one>
         <property name="unitprice" type="big_decimal">
             <column name="UNITPRICE" precision="22" scale="0" not-null="true" />
         </property>

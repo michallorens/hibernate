@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="pl.edu.agh.northwind.Categories" table="CATEGORIES">
         <id name="categoryid" type="big_decimal">
@@ -19,7 +19,7 @@
         <property name="picture" type="blob">
             <column name="PICTURE" />
         </property>
-        <set name="productses" table="PRODUCTS" inverse="false" lazy="true" fetch="select">
+        <set name="productses" table="PRODUCTS" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="CATEGORYID" precision="22" scale="0" />
             </key>

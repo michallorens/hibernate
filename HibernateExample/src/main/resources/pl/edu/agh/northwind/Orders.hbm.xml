@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="pl.edu.agh.northwind.Orders" table="ORDERS">
         <id name="orderid" type="big_decimal">
@@ -14,7 +14,7 @@
             <column name="EMPLOYEEID" precision="22" scale="0" />
         </many-to-one>
         <many-to-one name="customers" class="pl.edu.agh.northwind.Customers" cascade="save-update" fetch="select">
-            <column name="CUSTOMERID" length="5" />
+            <column name="CUSTOMERID" precision="22" scale="0" />
         </many-to-one>
         <property name="orderdate" type="string">
             <column name="ORDERDATE" length="15" />

@@ -1,6 +1,6 @@
 package pl.edu.agh.northwind;
 
-// Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1
+// Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1
 
 import java.math.BigDecimal;
 import java.sql.Blob;

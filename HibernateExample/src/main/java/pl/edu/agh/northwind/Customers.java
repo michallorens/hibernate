@@ -1,7 +1,8 @@
 package pl.edu.agh.northwind;
 
-// Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1
+// Generated 2014-05-13 14:44:40 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import java.util.Set;
  */
 public class Customers implements java.io.Serializable {
 
-	private String customerid;
+	private BigDecimal customerid;
 	private String companyname;
 	private String contactname;
 	private String contacttitle;
@@ -47,11 +48,11 @@ public class Customers implements java.io.Serializable {
 		this.orderses = orderses;
 	}
 
-	public String getCustomerid() {
+	public BigDecimal getCustomerid() {
 		return this.customerid;
 	}
 
-	public void setCustomerid(String customerid) {
+	public void setCustomerid(BigDecimal customerid) {
 		this.customerid = customerid;
 	}
 
