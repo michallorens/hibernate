@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pl.edu.agh.northwind.Suppliers" table="SUPPLIERS">
+        <id name="supplierid" type="big_decimal">
+            <column name="SUPPLIERID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">Seq_SupplierID</param>
+            </generator>
+        </id>
+        <property name="companyname" type="string">
+            <column name="COMPANYNAME" length="40" not-null="true" />
+        </property>
+        <property name="contactname" type="string">
+            <column name="CONTACTNAME" length="30" />
+        </property>
+        <property name="contacttitle" type="string">
+            <column name="CONTACTTITLE" length="30" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="60" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="15" />
+        </property>
+        <property name="region" type="string">
+            <column name="REGION" length="15" />
+        </property>
+        <property name="postalcode" type="string">
+            <column name="POSTALCODE" length="10" />
+        </property>
+        <property name="country" type="string">
+            <column name="COUNTRY" length="15" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="24" />
+        </property>
+        <property name="fax" type="string">
+            <column name="FAX" length="24" />
+        </property>
+        <property name="homepage" type="string">
+            <column name="HOMEPAGE" length="2000" />
+        </property>
+        <set name="productses" table="PRODUCTS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="SUPPLIERID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="pl.edu.agh.northwind.Products" />
+        </set>
+    </class>
+</hibernate-mapping>

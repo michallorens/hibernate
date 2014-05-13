@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521/XE</property>
+		<property name="hibernate.connection.username">lorens</property>
+		<property name="hibernate.connection.password">konik001</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.default_schema">LORENS</property>
+		<property name="show_sql">true</property>	
+		<mapping resource="pl/edu/agh/northwind/Products.hbm.xml"></mapping>	
+		<mapping resource="pl/edu/agh/northwind/Suppliers.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/OrderDetails.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/Categories.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/Customers.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/Orders.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/Employees.hbm.xml"></mapping>
+		<mapping resource="pl/edu/agh/northwind/Shippers.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>

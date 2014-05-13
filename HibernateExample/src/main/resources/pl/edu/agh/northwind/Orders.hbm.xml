@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pl.edu.agh.northwind.Orders" table="ORDERS">
+        <id name="orderid" type="big_decimal">
+            <column name="ORDERID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">Seq_OrderID</param>
+            </generator>
+        </id>
+        <many-to-one name="employees" class="pl.edu.agh.northwind.Employees" cascade="save-update" fetch="select">
+            <column name="EMPLOYEEID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="customers" class="pl.edu.agh.northwind.Customers" cascade="save-update" fetch="select">
+            <column name="CUSTOMERID" length="5" />
+        </many-to-one>
+        <property name="orderdate" type="string">
+            <column name="ORDERDATE" length="15" />
+        </property>
+        <property name="requireddate" type="string">
+            <column name="REQUIREDDATE" length="15" />
+        </property>
+        <property name="shippeddate" type="string">
+            <column name="SHIPPEDDATE" length="15" />
+        </property>
+        <property name="shipvia" type="big_decimal">
+            <column name="SHIPVIA" precision="22" scale="0" />
+        </property>
+        <property name="freight" type="big_decimal">
+            <column name="FREIGHT" precision="22" scale="0" />
+        </property>
+        <property name="shipname" type="string">
+            <column name="SHIPNAME" length="40" />
+        </property>
+        <property name="shipaddress" type="string">
+            <column name="SHIPADDRESS" length="60" />
+        </property>
+        <property name="shipcity" type="string">
+            <column name="SHIPCITY" length="15" />
+        </property>
+        <property name="shipregion" type="string">
+            <column name="SHIPREGION" length="15" />
+        </property>
+        <property name="shippostalcode" type="string">
+            <column name="SHIPPOSTALCODE" length="10" />
+        </property>
+        <property name="shipcountry" type="string">
+            <column name="SHIPCOUNTRY" length="15" />
+        </property>
+        <set name="orderDetailses" table="ORDER_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ORDERID" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="pl.edu.agh.northwind.OrderDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pl.edu.agh.northwind.Products" table="PRODUCTS">
+        <id name="productid" type="big_decimal">
+            <column name="PRODUCTID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">Seq_ProductID</param>
+            </generator>
+        </id>
+        <many-to-one name="categories" class="pl.edu.agh.northwind.Categories" cascade="save-update" fetch="select">
+            <column name="CATEGORYID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="suppliers" class="pl.edu.agh.northwind.Suppliers" cascade="save-update" fetch="select">
+            <column name="SUPPLIERID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="productname" type="string">
+            <column name="PRODUCTNAME" length="40" not-null="true" />
+        </property>
+        <property name="quantityperunit" type="string">
+            <column name="QUANTITYPERUNIT" length="20" />
+        </property>
+        <property name="unitprice" type="big_decimal">
+            <column name="UNITPRICE" precision="22" scale="0" />
+        </property>
+        <property name="unitsinstock" type="big_decimal">
+            <column name="UNITSINSTOCK" precision="22" scale="0" />
+        </property>
+        <property name="unitsonorder" type="big_decimal">
+            <column name="UNITSONORDER" precision="22" scale="0" />
+        </property>
+        <property name="reorderlevel" type="big_decimal">
+            <column name="REORDERLEVEL" precision="22" scale="0" />
+        </property>
+        <property name="discontinued" type="big_decimal">
+            <column name="DISCONTINUED" precision="22" scale="0" not-null="true" />
+        </property>
+        <set name="orderDetailses" table="ORDER_DETAILS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PRODUCTID" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="pl.edu.agh.northwind.OrderDetails" />
+        </set>
+    </class>
+</hibernate-mapping>

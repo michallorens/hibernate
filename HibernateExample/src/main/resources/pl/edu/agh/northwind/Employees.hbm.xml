@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pl.edu.agh.northwind.Employees" table="EMPLOYEES">
+        <id name="employeeid" type="big_decimal">
+            <column name="EMPLOYEEID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">Seq_EmployeeID</param>
+            </generator>
+        </id>
+        <property name="lastname" type="string">
+            <column name="LASTNAME" length="20" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" length="10" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="30" />
+        </property>
+        <property name="titleofcourtesy" type="string">
+            <column name="TITLEOFCOURTESY" length="25" />
+        </property>
+        <property name="birthdate" type="date">
+            <column name="BIRTHDATE" length="7" />
+        </property>
+        <property name="hiredate" type="date">
+            <column name="HIREDATE" length="7" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="60" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="15" />
+        </property>
+        <property name="region" type="string">
+            <column name="REGION" length="15" />
+        </property>
+        <property name="postalcode" type="string">
+            <column name="POSTALCODE" length="10" />
+        </property>
+        <property name="country" type="string">
+            <column name="COUNTRY" length="15" />
+        </property>
+        <property name="homephone" type="string">
+            <column name="HOMEPHONE" length="24" />
+        </property>
+        <property name="extension" type="string">
+            <column name="EXTENSION" length="4" />
+        </property>
+        <property name="photo" type="blob">
+            <column name="PHOTO" />
+        </property>
+        <property name="notes" type="blob">
+            <column name="NOTES" />
+        </property>
+        <property name="reportsto" type="big_decimal">
+            <column name="REPORTSTO" precision="22" scale="0" />
+        </property>
+        <property name="photopath" type="string">
+            <column name="PHOTOPATH" />
+        </property>
+        <set name="orderses" table="ORDERS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEEID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="pl.edu.agh.northwind.Orders" />
+        </set>
+    </class>
+</hibernate-mapping>

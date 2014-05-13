@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-05-13 06:34:59 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pl.edu.agh.northwind.Categories" table="CATEGORIES">
+        <id name="categoryid" type="big_decimal">
+            <column name="CATEGORYID" precision="22" scale="0" />
+            <generator class="sequence">
+                <param name="sequence">Seq_CategoryID</param>
+            </generator>
+        </id>
+        <property name="categoryname" type="string">
+            <column name="CATEGORYNAME" length="15" not-null="true" />
+        </property>
+        <property name="description" type="blob">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="picture" type="blob">
+            <column name="PICTURE" />
+        </property>
+        <set name="productses" table="PRODUCTS" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="CATEGORYID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="pl.edu.agh.northwind.Products" />
+        </set>
+    </class>
+</hibernate-mapping>

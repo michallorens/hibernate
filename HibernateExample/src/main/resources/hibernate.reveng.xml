@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<schema-selection match-schema="LORENS" />
+	<table-filter match-name="APEX.*" exclude="true" />
+	<table-filter match-name="DEMO.*" exclude="true" />
+	<table-filter match-name="DEPT" exclude="true" />
+	<table-filter match-name="EMP" exclude="true" />
+	<table name="CATEGORIES">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_CategoryID</param>
+			</generator>
+			<key-column name="CATEGORYID" />
+		</primary-key>
+	</table>
+	<table name="CUSTOMERS">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_CustomerID</param>
+			</generator>
+			<key-column name="CUSTOMERID" />
+		</primary-key>
+	</table>
+	<table name="EMPLOYEES">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_EmployeeID</param>
+			</generator>
+			<key-column name="EMPLOYEEID" />
+		</primary-key>
+	</table>
+	<table name="ORDERS">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_OrderID</param>
+			</generator>
+			<key-column name="ORDERID" />
+		</primary-key>
+	</table>
+	<table name="PRODUCTS">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_ProductID</param>
+			</generator>
+			<key-column name="PRODUCTID" />
+		</primary-key>
+	</table>
+	<table name="SHIPPERS">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_ShipperID</param>
+			</generator>
+			<key-column name="SHIPPERID" />
+		</primary-key>
+	</table>
+	<table name="SUPPLIERS">
+		<primary-key>
+			<generator class="sequence">
+				<param name="sequence">Seq_SupplierID</param>
+			</generator>
+			<key-column name="SUPPLIERID" />
+		</primary-key>
+	</table>
+</hibernate-reverse-engineering>
