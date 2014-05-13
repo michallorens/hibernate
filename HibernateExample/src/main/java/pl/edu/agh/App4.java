@@ -10,7 +10,6 @@ import pl.edu.agh.util.HibernateUtil;
 
 public class App4 {
 	public static void main(String[] args) {
-		System.out.println("Maven + Hibernate + Oracle");
 		Session session = HibernateUtil.getSessionFactory().openSession();
  
 		Categories category = new Categories("Owoce");

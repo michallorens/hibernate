@@ -8,8 +8,7 @@ import pl.edu.agh.northwind.Categories;
 import pl.edu.agh.northwind.Products;
 import pl.edu.agh.util.HibernateUtil;
 
-public class App1 
-{
+public class App1 {
 	public static void main(String[] args) {
 		System.out.println("Maven + Hibernate + Oracle");
 		Session session = HibernateUtil.getSessionFactory().openSession();

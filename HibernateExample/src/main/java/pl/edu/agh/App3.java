@@ -9,9 +9,7 @@ import org.hibernate.cfg.Configuration;
 import pl.edu.agh.northwind.Categories;
 
 public class App3 {
-
 	public static void main(String [] args){
-        
         SessionFactory sessionFactory = new Configuration()
                                 .configure().buildSessionFactory();
         Session session = sessionFactory.openSession();

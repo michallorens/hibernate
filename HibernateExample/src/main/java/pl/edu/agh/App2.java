@@ -10,9 +10,7 @@ import org.hibernate.cfg.Configuration;
 import pl.edu.agh.northwind.Products;
 
 public class App2 {
-
 	public static void main(String [] args){
-        
         SessionFactory sessionFactory = new Configuration()
                                 .configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
@@ -26,7 +24,7 @@ public class App2 {
                 System.out.println("Czy w pelni zainicjalizowano obiekt? " + Hibernate
                                                 .isInitialized(product.getCategories()));
                 System.out.println("Zczytywanie kategorii...");
-                System.out.println("Nazwa : " + product
+                System.out.println("Nazwa: " + product
                                                 .getCategories().getCategoryname());
         } else {
                 System.err.println("product == null");
